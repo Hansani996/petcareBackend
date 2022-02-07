@@ -1,5 +1,5 @@
 package com.bolton.HappyPetCare.repository;
 
-public class PetRepoitory{
+public interface PetRepository {
 
 }
