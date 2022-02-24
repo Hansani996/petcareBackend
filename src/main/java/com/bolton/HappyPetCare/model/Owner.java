@@ -1,5 +1,7 @@
 package com.bolton.HappyPetCare.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,18 +11,22 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="owner")
-public class Owner {
+public class Owner implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="ownerId",nullable = false , updatable = false)
 	private int ownerId;
 	
 	@Column(name="nic")
 	private String nic;
+	
 	@Column(name="firstName")
 	private String firstName;
+	
 	@Column(name="lastName")
 	private String lastName;
+	
 	@Column(name="email")
 	private String email;
 	
@@ -66,6 +72,23 @@ public class Owner {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Owner{" +
+				"ownerId=" + ownerId +
+				", nic='" + nic + '\'' +
+				", firstName='" + firstName + '\'' +
+				", lastName='" + lastName + '\'' +
+				", email='" + email + '\'' +
+				'}';
+	}
+
+	public void setOwnerId(String string) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	
