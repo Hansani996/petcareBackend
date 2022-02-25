@@ -86,6 +86,8 @@ public class Owner implements Serializable{
 				'}';
 	}
 
+	
+
 	public void setOwnerId(String string) {
 		// TODO Auto-generated method stub
 		
