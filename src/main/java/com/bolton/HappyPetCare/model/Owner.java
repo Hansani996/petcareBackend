@@ -1,13 +1,10 @@
 package com.bolton.HappyPetCare.model;
 
-import java.io.Serializable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name="owner")
@@ -29,7 +26,10 @@ public class Owner implements Serializable{
 	
 	@Column(name="email")
 	private String email;
-	
+
+	@JsonIgnore
+	@OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
+	private List<Pet> pets;
 	public Owner() {
 		
 	}

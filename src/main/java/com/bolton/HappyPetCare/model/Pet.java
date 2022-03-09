@@ -1,11 +1,6 @@
 package com.bolton.HappyPetCare.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "Pet")
@@ -29,9 +24,26 @@ public class Pet {
 	private boolean male;
 	@Column(name = "specialMarkings")
 	private String specialMarkings;
-
+	@ManyToOne
+	@JoinColumn
+	private Owner owner;
 	public Pet() {
 		
+	}
+
+	@Override
+	public String toString() {
+		return "Pet{" +
+				"petId=" + petId +
+				", petName='" + petName + '\'' +
+				", breed='" + breed + '\'' +
+				", color='" + color + '\'' +
+				", dob='" + dob + '\'' +
+				", femaie=" + femaie +
+				", male=" + male +
+				", specialMarkings='" + specialMarkings + '\'' +
+				", owner=" + owner +
+				'}';
 	}
 
 	public int getPetId() {
@@ -98,17 +110,11 @@ public class Pet {
 		this.specialMarkings = specialMarkings;
 	}
 
-	@Override
-	public String toString() {
-		return "Pet{" +
-				"petId=" + petId +
-				", petName='" + petName + '\'' +
-				", breed='" + breed + '\'' +
-				", color='" + color + '\'' +
-				", dob='" + dob + '\'' +
-				", femaie=" + femaie +
-				", male=" + male +
-				", specialMarkings='" + specialMarkings + '\'' +
-				'}';
+	public Owner getOwner() {
+		return owner;
+	}
+
+	public void setOwner(Owner owner) {
+		this.owner = owner;
 	}
 }

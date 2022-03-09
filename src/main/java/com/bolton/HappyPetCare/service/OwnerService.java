@@ -6,9 +6,6 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.bolton.HappyPetCare.model.Owner;
-import com.bolton.HappyPetCare.repository.OwnerRepository;
-
 @Service
 public class OwnerService {
 	
