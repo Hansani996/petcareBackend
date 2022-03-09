@@ -3,6 +3,7 @@ package com.bolton.HappyPetCare.service;
 import java.util.List;
 import java.util.UUID;
 
+import com.bolton.HappyPetCare.model.Owner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
