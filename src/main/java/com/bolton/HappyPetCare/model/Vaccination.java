@@ -1,20 +1,25 @@
 package com.bolton.HappyPetCare.model;
 
-import jdk.vm.ci.meta.Local;
+import jdk.nashorn.internal.objects.annotations.Getter;
+import jdk.nashorn.internal.objects.annotations.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.time.LocalDateTime;
 
+//@Getter
+//@Setter
 @Entity
 public class Vaccination {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String vaccineCode;
     private String vaccineName;
-    private Local date;
+    private LocalDateTime date;
     private String doseNumber;
 
     public Integer getId() {
@@ -41,11 +46,11 @@ public class Vaccination {
         this.vaccineName = vaccineName;
     }
 
-    public Local getDate() {
+    public LocalDateTime getDate() {
         return date;
     }
 
-    public void setDate(Local date) {
+    public void setDate(LocalDateTime date) {
         this.date = date;
     }
 
